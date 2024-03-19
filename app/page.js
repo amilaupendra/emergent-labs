@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
     <Homepage/>
-    <h1>hiii</h1>
+    <h1 className="bg-red-400">hiii</h1>
     </div>
   );
 }
