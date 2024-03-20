@@ -10,7 +10,7 @@ const navbar = () => {
   <div className="flex-1">
     {/* <a className="text-xl btn btn-ghost">daisyUI</a> */}
     <Link href="/">
-    <Image alt="logo" src='./logo.png' style={{maxWidth:'150px', maxHeight:'120px'}}  /></Link>
+    <Image alt="logo" src='/logo.png' style={{maxWidth:'150px', maxHeight:'120px'}}  /></Link>
   </div>
   <div className="flex-none gap-2">
     <div className='flex-none gap-2'>
