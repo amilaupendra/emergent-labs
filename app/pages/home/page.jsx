@@ -3,6 +3,7 @@ import Navbar from "../../components/navbar/page";
 import Banner from "@/app/components/home/banner/page";
 import Intro from "@/app/components/home/Introduction/page";
 import Footer from "@/app/components/footer/page"
+import Projects from '@/app/components/home/projects/page'
 
 const homepage = () => {
   return (
@@ -10,6 +11,7 @@ const homepage = () => {
       <Banner />
       <Intro />
       <div className="flex ">
+      <Projects/>
       </div>
     </div>
   );
