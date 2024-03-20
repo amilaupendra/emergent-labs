@@ -3,11 +3,11 @@
 import Image from 'next/image'
 import Cart1 from '@/public/cart1.jpg'
 
-const carousel = ({objectArray}) => {
-  if (!objectArray) {
-    return <div>No data available</div>;
-  }
-
+const carousel = () => {
+  const objectArray=[
+    {imageUrl: '/web.png', description:'Web Sites'},
+    {imageUrl: '/mobile.png', description:'Mobile Apps'},
+]
   return (
     <div className=' w-100 mt-14'>
         {objectArray.map((object, index)=>(
