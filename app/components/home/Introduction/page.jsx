@@ -13,7 +13,8 @@ const page = () => {
         <h1 className='text-4xl font-bold'>What we Do</h1>
         <p>We are a digital innovation company that helps businessess and organizations create the future through software, data, and emerging technology.</p>
     <div>
-        <Carousel objectArray={objectArray}/>
+        {/* <Carousel objectArray={objectArray}/> */}
+        <h1>hello from intro</h1>
     </div>
     
     </div>
