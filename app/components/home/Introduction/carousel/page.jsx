@@ -10,7 +10,7 @@ const carousel = ({objectArray}) => {
         {objectArray.map((object, index)=>(
             <div key={index} className='flex flex-row w-full'>
                 <p className='absolute w-full mt-10 text-3xl font-bold text-center text-white uppercase md:text-6xl'>{object.description}</p>
-                <Image className='w-screen' src={object.imageUrl}></Image>
+                <Image alt="images" className='w-screen' src={object.imageUrl}></Image>
             </div>
         ))}
     </div>
