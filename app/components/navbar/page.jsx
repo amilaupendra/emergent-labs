@@ -14,7 +14,7 @@ const navbar = () => {
   </div>
   <div className="flex-none gap-2">
     <div className='flex-none gap-2'>
-      <Link href="/pages/about">About</Link>
+      <Link href="/pages/about" className='text-gray-500'>About</Link>
     </div>
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
