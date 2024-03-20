@@ -11,7 +11,7 @@ const about = () => {
       <div className="w-full pt-16 md:inline-flex">
         <div>
         <Image
-          src="/about.png"
+          src="./about.png"
           width={500}
           height={500}
           alt="Picture of the author"
