@@ -4,6 +4,9 @@ import Image from 'next/image'
 import Cart1 from '@/public/cart1.jpg'
 
 const carousel = ({objectArray}) => {
+  if (!objectArray) {
+    return <div>No data available</div>;
+  }
 
   return (
     <div className=' w-100 mt-14'>

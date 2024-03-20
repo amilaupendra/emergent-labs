@@ -1,5 +1,7 @@
 import React from 'react'
 import Carousel from '@/app/components/home/Introduction/carousel/page'
+import Image from 'next/image'
+
 
 const page = () => {
     const objectArray=[
