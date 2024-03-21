@@ -1,7 +1,6 @@
 // 'use client'
 
 import Image from 'next/image'
-import Cart1 from '@/public/cart1.jpg'
 
 const carousel = () => {
   const objectArray=[
