@@ -9,7 +9,7 @@ const projects = () => {
         <div className="p-3 carousel-item w-[200px] h-[200px]">
           <Image
             className="hover:scale-125"
-            src="/cake.jpg"
+            src="/cakeshop.jpg"
             width={500}
             height={500}
             alt="Burger"
