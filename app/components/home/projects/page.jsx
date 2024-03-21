@@ -6,7 +6,7 @@ const projects = () => {
     <div>
       <h1 className="pt-12 pb-6 text-3xl font-bold">Want new ideas?</h1>
       <div className="carousel rounded-box">
-        <div className="p-3 carousel-item">
+        <div className="p-3 carousel-item w-[200px] h-[200px]">
           <Image
             className="hover:scale-125"
             src="/cake.jpg"
