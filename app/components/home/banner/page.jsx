@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Banner from '../../../../public/banner.jpg'
+import Link from 'next/link'
+
 
 const banner = () => {
   return (
@@ -11,6 +13,8 @@ const banner = () => {
            technology and make it accessible to everyone</p>
       </div>
       <button className=" btn btn-warning w-[150px] mt-4">Learn more</button>
+      <Link href="/components/promotions/freesite"> <button className=" btn btn-warning w-[150px] mt-4">Request free web site Offer </button> </Link>
+
     </div>
   )
 }
