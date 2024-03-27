@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const projects = () => {
   return (
-    <div>
+    <div className="overflow-scroll">
       <h1 className="pt-12 pb-6 text-3xl font-bold">Want new ideas?</h1>
       <div className="carousel rounded-box">
       <div className="flex-col p-3 text-2xl text-center carousel-item">

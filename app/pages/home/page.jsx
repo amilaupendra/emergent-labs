@@ -4,6 +4,7 @@ import Banner from "@/app/components/home/banner/page";
 import Intro from "@/app/components/home/Introduction/page";
 import Footer from "@/app/components/footer/page"
 import Projects from '@/app/components/home/projects/page'
+import Feedback from '@/app/components/home/feedback/page'
 
 const homepage = () => {
   return (
@@ -13,6 +14,7 @@ const homepage = () => {
       <div className="flex ">
       <Projects/>
       </div>
+      <Feedback/>
     </div>
   );
 };

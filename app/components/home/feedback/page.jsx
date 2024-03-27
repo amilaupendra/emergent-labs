@@ -1,9 +1,10 @@
 import React from 'react'
+import Component from '@/app/components/home/feedback/component/page'
 
 const feedback = () => {
   return (
-    <div>
-        
+    <div className='flex h-auto'>
+        <Component/>
     </div>
   )
 }
