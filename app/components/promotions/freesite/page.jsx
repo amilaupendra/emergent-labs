@@ -2,22 +2,37 @@
 import React, { useState } from "react";
 
 const page = () => {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [telephone, setTelephone] = useState("");
   const [email, setEmail] = useState("");
   const [visibleForm, setVisibleForm] = useState(false);
 
-  const submitForm = (event) => {
+  const submitForm = async(event) => {
     event.preventDefault();
     const formData = {
-      name,
+      firstName,
+      lastName,
       businessName,
       telephone,
       email,
     };
     console.log("businessss name here", formData);
+
+    const url = 'https://fwgi7iwl19.execute-api.ap-south-1.amazonaws.com/prod/promotion';
+
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(formData), // Stringify the formData object
+    });
+
+    if(response){
+      alert("succusfully submitted the form")
+    }
   };
+
+
 
   return (
     <div className="flex-col">
@@ -90,7 +105,7 @@ const page = () => {
                 htmlFor="name"
                 className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
               >
-                Name
+                First Name
               </label>
               <input
                 id="name"
@@ -98,7 +113,23 @@ const page = () => {
                 autoComplete="name"
                 type="text"
                 placeholder="name"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+            </div>
+            <div className="px-3 mb-6 md:mb-0">
+              <label
+                htmlFor="name"
+                className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+              >
+                Last Name
+              </label>
+              <input
+                id="name"
+                className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white"
+                autoComplete="name"
+                type="text"
+                placeholder="name"
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
             <div className="px-3 mb-6 md:mb-0">
