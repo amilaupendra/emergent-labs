@@ -1,5 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { FaWindowClose } from "react-icons/fa";
 
 const page = () => {
   const [firstName, setFirstName] = useState("");
@@ -9,8 +11,12 @@ const page = () => {
   const [email, setEmail] = useState("");
   const [visibleForm, setVisibleForm] = useState(false);
 
-  const submitForm = async(event) => {
-    event.preventDefault();
+  const isFormFilled = () => {
+    return firstName && lastName && businessName && telephone && email;
+  };
+
+  const submitForm = async (event) => {
+    // event.preventDefault();
     const formData = {
       firstName,
       lastName,
@@ -18,25 +24,35 @@ const page = () => {
       telephone,
       email,
     };
-    console.log("businessss name here", formData);
-
-    const url = 'https://fwgi7iwl19.execute-api.ap-south-1.amazonaws.com/prod/promotion';
+    
+    if(firstName!=''&&lastName!=''&&businessName!=''&&telephone!=''&&email!=''){
+      const url =
+      "https://fwgi7iwl19.execute-api.ap-south-1.amazonaws.com/prod/promotion";
 
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(formData), // Stringify the formData object
     });
 
-    if(response){
-      alert("succusfully submitted the form")
+    if (response.ok) {
+      alert("succusfully submitted the form");
+      setFirstName(""); // Clearing the form fields
+      setLastName("");
+      setBusinessName("");
+      setTelephone("");
+      setEmail("");
+      setVisibleForm(false);
     }
+    }else{
+      return alert('abc')
+    }
+
+    
   };
-
-
 
   return (
     <div className="flex-col">
-      <div className=" md:w-1/2 md:m-auto">
+      <div className={` md:w-1/2 md:m-auto ${visibleForm ? "blur" : ""}`}>
         <p className="font-bold text-left">Limited Availability </p>
         <p className="mb-2 text-left ">
           This free offer is available for a limited time or to a limited number
@@ -98,8 +114,10 @@ const page = () => {
       </button>
 
       {visibleForm ? (
-        <form className="items-center w-full m-auto mb-20 border-2 shadow-xl md:w-1/2 md:border-solid border-grey-600">
-          <div className="flex flex-col flex-wrap p-8 mb-6 -mx-3">
+        <form className="fixed top-0 flex justify-center w-screen h-screen m-auto mb-20 border-2 shadow-xl md:w-screen md:border-solid border-grey-600">
+          <div className="flex flex-col flex-wrap w-full p-4 mb-6 -mx-3 bg-white md:w-1/2">
+          <div className="ml-[100%] cursor-pointer" onClick={()=>setVisibleForm(false)}><FaWindowClose /></div>
+            <p className="mb-4 font-bold text-center"> It's your ticket to reaching new heights</p>
             <div className="px-3 mb-6 md:mb-0">
               <label
                 htmlFor="name"
@@ -112,6 +130,7 @@ const page = () => {
                 className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white"
                 autoComplete="name"
                 type="text"
+                required
                 placeholder="name"
                 onChange={(e) => setFirstName(e.target.value)}
               />
@@ -180,12 +199,15 @@ const page = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <button
-              onClick={(e) => submitForm(e)}
-              className=" btn btn-warning w-[150px] m-auto mt-4 "
-            >
-              Submit
-            </button>
+            <Link href="/">
+              <button
+                onClick={(e) => submitForm(e)}
+                className=" btn btn-warning w-[150px] m-auto mt-4 block"
+                disabled={!isFormFilled()}
+              >
+                Submit
+              </button>
+            </Link>
           </div>
         </form>
       ) : (

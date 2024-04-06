@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const navbar = () => {
   return (
-    <div className='fixed z-10 w-screen'>
+    <div className='absolute z-10 w-[100%]'>
         <div className="navbar bg-base-100">
   <div className="flex-1">
     {/* <a className="text-xl btn btn-ghost">daisyUI</a> */}

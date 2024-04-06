@@ -8,7 +8,7 @@ import Feedback from '@/app/components/home/feedback/page'
 
 const homepage = () => {
   return (
-    <div className="container relative flex flex-col mx-auto">
+    <div className="relative flex-col mx-8 ">
       <Banner />
       <Intro />
       <div className="flex ">

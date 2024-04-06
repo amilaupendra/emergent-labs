@@ -7,7 +7,7 @@ const page = () => {
   const clients = [{name:'rashmika',feedback:'very good service'},{name:'nuwan',feedback:'very good your web page'},]
 
   return (
-    <div className="flex-col mb-8 bg-amber-50 ">
+    <div className="flex-col w-full mb-8 bg-amber-50 ">
         <label>Enter your Name</label>
         <input type="text" placeholder="john " className="block w-full leading-tight text-gray-700 align-top border border-gray-200 rounded appearance-none md:mb-4 md:w-1/4 focus:outline-none focus:bg-white focus:border-gray-500"/>
         <label>Enter your feedback</label>
