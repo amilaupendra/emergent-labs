@@ -4,10 +4,8 @@ import Link from "next/link";
 import { FaWindowClose } from "react-icons/fa";
 import Navbar from "@/app/components/navbar/page";
 
-
 const page = () => {
 
-  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [businessName, setBusinessName] = useState("");
@@ -61,7 +59,7 @@ const page = () => {
     <div className="flex-col">
       <Navbar/>
       <div className={` md:w-1/2 md:m-auto ${visibleForm ? "blur" : ""} pt-16`}>
-      <p className="font-bold text-center">TERMS OF SERVICE </p>
+      {/* <p className="font-bold text-center">TERMS OF SERVICE </p>
 
         <p className="font-bold text-left">Limited Availability </p>
         <p className="mb-2 text-left ">
@@ -107,8 +105,9 @@ const page = () => {
         <p className="mb-2 text-left">
         The service provider reserves the right to refuse the free service at any time without prior notice.
          However, we guarantee a refund if the service is refused after payment has been made.
-        </p>
-        <p className="font-bold text-left">Changes to Terms: </p>
+        </p> */}
+        <p className="px-4 pt-20 text-justify">We are pleased to offer a complimentary service exclusively to select businesses for a limited time. 
+          Upon submission of the form, our team will promptly provide the necessary terms and details tailored to your specific needs</p>
         <p className="mb-2 text-left">
        
         </p>
@@ -119,7 +118,7 @@ const page = () => {
         }}
         className=" btn btn-warning w-[150px] m-auto mt-4 mb-20 block "
       >
-        Agree
+        Ok
       </button>
 
       {visibleForm ? (
@@ -229,7 +228,7 @@ const page = () => {
                 className=" btn btn-warning w-[150px] m-auto mt-4 block"
                 disabled={!isFormFilled()}
               >
-                <Link href='/pages/home'>Submit</Link>
+                <Link href='/pages/freesite'>Submit</Link>
               </button>
            
           </div>

@@ -13,6 +13,9 @@ const navbar = () => {
     <Image alt="logo" src='/logo.png'  width={200} height={300}  /></Link>
   </div>
   <div className="flex-none gap-2">
+  <div className='flex-none gap-2'>
+      <Link href="/" className='text-gray-500'>Home</Link>
+    </div>
     <div className='flex-none gap-2'>
       <Link href="/pages/about" className='text-gray-500'>About</Link>
     </div>
