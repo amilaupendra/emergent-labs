@@ -106,8 +106,8 @@ const page = () => {
         The service provider reserves the right to refuse the free service at any time without prior notice.
          However, we guarantee a refund if the service is refused after payment has been made.
         </p> */}
-        <p className="px-4 pt-20 text-justify">We are pleased to offer a complimentary service exclusively to select businesses for a limited time. 
-          Upon submission of the form, our team will promptly provide the necessary terms and details tailored to your specific needs</p>
+        <p className="px-4 pt-20 text-justify">We're excited to announce a limited-time offer of a complimentary website service exclusively for select businesses. Simply fill out the form, and our team will promptly 
+        deliver customized terms and details to meet your specific needs. Don't miss out on this opportunity to enhance your online presence for free!</p>
         <p className="mb-2 text-left">
        
         </p>
