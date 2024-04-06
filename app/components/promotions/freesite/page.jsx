@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaWindowClose } from "react-icons/fa";
 import Navbar from "@/app/components/navbar/page";
-import { useRouter } from "next/router";
 
 
 const page = () => {
 
-  const router = useRouter();
   
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -23,7 +21,7 @@ const page = () => {
   };
 
   const submitForm = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     const formData = {
       firstName,
       lastName,
@@ -51,7 +49,6 @@ const page = () => {
       setEmail("");
       setAdditionalrequirements("");
       setVisibleForm(false);
-      router.push('/pages/home');
     }
     }else{
       return alert('abc')
@@ -232,7 +229,7 @@ const page = () => {
                 className=" btn btn-warning w-[150px] m-auto mt-4 block"
                 disabled={!isFormFilled()}
               >
-                Submit
+                <Link href='/pages/home'>Submit</Link>
               </button>
            
           </div>
