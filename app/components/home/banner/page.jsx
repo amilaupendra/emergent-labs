@@ -12,7 +12,7 @@ const banner = () => {
         <p className='mt-10 '>we are technology compnay that builds software products and services.our mission is to create the future of
            technology and make it accessible to everyone</p>
       </div>
-      <button className=" btn btn-warning w-[150px] mt-4">Learn more</button>
+      {/* <Link href="/pages/learnmore"><button className=" btn btn-warning w-[150px] mt-4">Learn more</button></Link> */}
       <Link href="/components/promotions/freesite"> <button className=" btn btn-warning w-[150px] mt-4">Request free web site Offer </button> </Link>
 
     </div>

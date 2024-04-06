@@ -2,14 +2,21 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaWindowClose } from "react-icons/fa";
+import Navbar from "@/app/components/navbar/page";
+import { useRouter } from "next/router";
+
 
 const page = () => {
+
+  const router = useRouter();
+  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [telephone, setTelephone] = useState("");
   const [email, setEmail] = useState("");
   const [visibleForm, setVisibleForm] = useState(false);
+  const [additionalRequirements, setAdditionalrequirements] = useState("")
 
   const isFormFilled = () => {
     return firstName && lastName && businessName && telephone && email;
@@ -23,6 +30,7 @@ const page = () => {
       businessName,
       telephone,
       email,
+      additionalRequirements,
     };
     
     if(firstName!=''&&lastName!=''&&businessName!=''&&telephone!=''&&email!=''){
@@ -41,7 +49,9 @@ const page = () => {
       setBusinessName("");
       setTelephone("");
       setEmail("");
+      setAdditionalrequirements("");
       setVisibleForm(false);
+      router.push('/pages/home');
     }
     }else{
       return alert('abc')
@@ -52,7 +62,10 @@ const page = () => {
 
   return (
     <div className="flex-col">
-      <div className={` md:w-1/2 md:m-auto ${visibleForm ? "blur" : ""}`}>
+      <Navbar/>
+      <div className={` md:w-1/2 md:m-auto ${visibleForm ? "blur" : ""} pt-16`}>
+      <p className="font-bold text-center">TERMS OF SERVICE </p>
+
         <p className="font-bold text-left">Limited Availability </p>
         <p className="mb-2 text-left ">
           This free offer is available for a limited time or to a limited number
@@ -95,13 +108,12 @@ const page = () => {
         </p>
         <p className="font-bold text-left">Right to Refuse </p>
         <p className="mb-2 text-left">
-          The service provider reserves the right to refuse service to any
-          customer for any reason.
+        The service provider reserves the right to refuse the free service at any time without prior notice.
+         However, we guarantee a refund if the service is refused after payment has been made.
         </p>
         <p className="font-bold text-left">Changes to Terms: </p>
         <p className="mb-2 text-left">
-          The service provider reserves the right to change the terms and
-          conditions of the free offer at any time without prior notice.
+       
         </p>
       </div>
       <button
@@ -114,7 +126,7 @@ const page = () => {
       </button>
 
       {visibleForm ? (
-        <form className="fixed top-0 flex justify-center w-screen h-screen m-auto mb-20 border-2 shadow-xl md:w-screen md:border-solid border-grey-600">
+        <form className="fixed top-0 flex justify-center w-screen h-auto pt-20 m-auto mb-20 border-2 shadow-xl md:w-screen md:border-solid border-grey-600">
           <div className="flex flex-col flex-wrap w-full p-4 mb-6 -mx-3 bg-white md:w-1/2">
           <div className="ml-[100%] cursor-pointer" onClick={()=>setVisibleForm(false)}><FaWindowClose /></div>
             <p className="mb-4 font-bold text-center"> It's your ticket to reaching new heights</p>
@@ -199,7 +211,22 @@ const page = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <Link href="/">
+            <div className="w-full px-3">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+              >
+                Do you need additional requirements?  
+              </label>
+              <input
+                className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                id="email"
+                type="text"
+                placeholder="User registration,Admin pannel,photo upload etc; "
+                autoComplete="off"
+                onChange={(e) => setAdditionalrequirements(e.target.value)}
+              />
+            </div>
               <button
                 onClick={(e) => submitForm(e)}
                 className=" btn btn-warning w-[150px] m-auto mt-4 block"
@@ -207,7 +234,7 @@ const page = () => {
               >
                 Submit
               </button>
-            </Link>
+           
           </div>
         </form>
       ) : (
