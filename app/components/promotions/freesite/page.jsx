@@ -56,7 +56,7 @@ const page = () => {
   };
 
   return (
-    <div className="flex-col">
+    <div className="flex-col content-center w-full">
       <Navbar/>
       <div className={` md:w-1/2 md:m-auto ${visibleForm ? "blur" : ""} pt-16`}>
       {/* <p className="font-bold text-center">TERMS OF SERVICE </p>
@@ -106,11 +106,9 @@ const page = () => {
         The service provider reserves the right to refuse the free service at any time without prior notice.
          However, we guarantee a refund if the service is refused after payment has been made.
         </p> */}
-        <p className="px-4 pt-20 text-justify">We're excited to announce a limited-time offer of a complimentary website service exclusively for select businesses. Simply fill out the form, and our team will promptly 
+        <p className="px-4 pt-20 text-justify w-[100%] ">We're excited to announce a limited-time offer of a complimentary website service exclusively for select businesses. Simply fill out the form, and our team will promptly 
         deliver customized terms and details to meet your specific needs. Don't miss out on this opportunity to enhance your online presence for free!</p>
-        <p className="mb-2 text-left">
-       
-        </p>
+      
       </div>
       <button
         onClick={() => {
@@ -122,7 +120,7 @@ const page = () => {
       </button>
 
       {visibleForm ? (
-        <form className="fixed top-0 flex justify-center w-screen h-auto pt-20 m-auto mb-20 border-2 shadow-xl md:w-screen md:border-solid border-grey-600">
+        <form className="absolute top-0 flex justify-center w-screen h-auto pt-20 m-auto mb-20 border-2 shadow-xl md:w-screen md:border-solid border-grey-600">
           <div className="flex flex-col flex-wrap w-full p-4 mb-6 -mx-3 bg-white md:w-1/2">
           <div className="ml-[100%] cursor-pointer" onClick={()=>setVisibleForm(false)}><FaWindowClose /></div>
             <p className="mb-4 font-bold text-center"> It's your ticket to reaching new heights</p>
@@ -227,8 +225,7 @@ const page = () => {
                 onClick={(e) => submitForm(e)}
                 className=" btn btn-warning w-[150px] m-auto mt-4 block"
                 disabled={!isFormFilled()}
-              >
-                <Link href='/pages/freesite'>Submit</Link>
+              >Submit
               </button>
            
           </div>
