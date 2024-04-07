@@ -124,7 +124,7 @@ const page = () => {
           <div className="flex flex-col flex-wrap w-full p-4 mb-6 -mx-3 bg-white md:w-1/2">
           <div className="ml-[100%] cursor-pointer" onClick={()=>setVisibleForm(false)}><FaWindowClose /></div>
             <p className="mb-4 font-bold text-center"> It's your ticket to reaching new heights</p>
-            <div className="px-3 mb-6 md:mb-0">
+            <div className="w-full px-3 mb-6 md:mb-0">
               <label
                 htmlFor="name"
                 className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
@@ -141,7 +141,7 @@ const page = () => {
                 onChange={(e) => setFirstName(e.target.value)}
               />
             </div>
-            <div className="px-3 mb-6 md:mb-0">
+            <div className="w-full px-3 mb-6 md:mb-0">
               <label
                 htmlFor="name"
                 className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
@@ -157,7 +157,7 @@ const page = () => {
                 onChange={(e) => setLastName(e.target.value)}
               />
             </div>
-            <div className="px-3 mb-6 md:mb-0">
+            <div className="w-full px-3 mb-6 md:mb-0">
               <label
                 htmlFor="business"
                 className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
@@ -167,13 +167,13 @@ const page = () => {
               <input
                 id="business"
                 autoComplete="organization"
-                className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white"
                 type="text"
                 placeholder="My Business"
                 onChange={(e) => setBusinessName(e.target.value)}
               />
             </div>
-            <div className="w-full px-3">
+            <div className="w-full px-3 mb-6 md:mb-0">
               <label
                 htmlFor="telephone"
                 className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
@@ -182,14 +182,14 @@ const page = () => {
               </label>
               <input
                 id="telephone"
-                className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white"
                 autoComplete="tel"
                 type="tel"
                 placeholder="07723564502"
                 onChange={(e) => setTelephone(e.target.value)}
               />
             </div>
-            <div className="w-full px-3">
+            <div className="w-full px-3 mb-6 md:mb-0">
               <label
                 htmlFor="email"
                 className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
@@ -197,7 +197,7 @@ const page = () => {
                 Email
               </label>
               <input
-                className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white"
                 id="email"
                 type="email"
                 placeholder="john@gmail.com"
@@ -205,7 +205,7 @@ const page = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="w-full px-3">
+            <div className="w-full px-3 mb-6 md:mb-0">
               <label
                 htmlFor="email"
                 className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
@@ -213,7 +213,7 @@ const page = () => {
                 Do you have additional requirements?  
               </label>
               <input
-                className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white"
                 id="email"
                 type="text"
                 placeholder="User registration,Admin pannel,photo upload etc; "
